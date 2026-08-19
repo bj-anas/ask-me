@@ -1,0 +1,37 @@
+{%- assign rating = block.settings.product.metafields.reviews.rating.value | default: block.settings.preview_rating | round -%}
+
+<div class="star-rating" style="--star-color: {{ block.settings.star_color.hex }}">
+  {% render 'stars', rating: rating %}
+  <span class="star-rating-label">{{ 'star_rating.label' | t }}</span>
+</div>
+
+{% schema %}
+{
+  "label": "Star Rating",
+  "target": "section",
+  "stylesheet": "star-rating.css",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product",
+      "autofill": true
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star color",
+      "default": "#ffb400"
+    },
+    {
+      "type": "range",
+      "id": "preview_rating",
+      "label": "Rating shown until your app writes one",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,21 @@
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.star-rating-stars {
+  display: inline-flex;
+  letter-spacing: 0.1em;
+}
+
+.star-rating-star {
+  color: var(--star-color, #ffb400);
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.star-rating-label {
+  font-size: 0.875rem;
+  opacity: 0.75;
+}
